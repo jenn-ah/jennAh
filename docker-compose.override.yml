@@ -1,14 +1,16 @@
 version: '3'
 services:
   jennah-site:
-    image: ${DOCKERHUB_NAME}/${IMAGE_NAME}:${IMAGE_VERSION}
-    env_file: .env
-    environment:
-      NODE_ENV: production
+    image: ${DOCKERHUB_NAME}/${IMAGE_NAME}:${IMAGE_VERSION}-local
     depends_on:
       - postgres-primary-db
-    command: ["node", "app.js"]
+    command: ["npm", "run", "dev"]
     container_name: ${IMAGE_NAME}
+    volumes:
+      - ".:/app"
+    env_file: .env
+    environment:
+      NODE_ENV: development
     ports:
       - "${EXPRESS_HOST_PORT}:${EXPRESS_CONTAINER_PORT}"
     networks:
@@ -19,7 +21,10 @@ services:
     volumes: 
       - pg-data-volume:/var/lib/postgresql/data
     ports: 
-      - '${POSTGRES_HOST_PORT}:${POSTGRES_CONTAINER_PORT}'
+      - "${POSTGRES_HOST_PORT}:${POSTGRES_CONTAINER_PORT}"
     networks:
       - my-app-network
-
+volumes:
+  pg-data-volume:
+networks:
+  my-app-network:
