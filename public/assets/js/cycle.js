@@ -31,5 +31,5 @@ setInterval(function() {
     return $(this).data('cycle-num') == next;
   }).addClass('current');
   
-  console.log(next);
+  //console.log(next);
 }, 2000);

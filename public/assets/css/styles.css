@@ -1,12 +1,11 @@
-/* 
+
  body {
   margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
 } 
 
 canvas {
   display: block;
-}  */
+} 
 
 .text {
   height: 36px;
@@ -70,7 +69,7 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #cccccc;
+  background-color: #000000;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -78,7 +77,7 @@ canvas {
 
 /* ---- stats.js ---- */
 
- .count-particles{
+ /* .count-particles{
   background: #000022;
   position: absolute;
   top: 48px;
@@ -110,4 +109,4 @@ canvas {
 
 .count-particles{
   border-radius: 0 0 3px 3px;
-}
+} */
