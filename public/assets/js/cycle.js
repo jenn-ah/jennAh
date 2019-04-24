@@ -1,9 +1,9 @@
 var cycleText = [
-  'Software Engineer',
-  'Front-End Developer',
-  'Back-End Developer',
-  'Front End Engineer',
-  'Back End Engineer'
+  'SOFTWARE ENGINEER',
+  'FRONT-END DEVELOPER',
+  'BACK-END DEVELOPER',
+  'FRONT END ENGINEER',
+  'BACK END ENGINEER'
 ];
 
 for(var i = 0; i < cycleText.length; i++) {
