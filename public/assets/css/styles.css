@@ -1,29 +1,84 @@
-/* ---- reset ---- */
-
-body {
+/* 
+ body {
   margin: 0;
-  font: 75% Arial, Helvetica, sans-serif;
-}
+  font: normal 75% Arial, Helvetica, sans-serif;
+} 
 
 canvas {
   display: block;
+}  */
+
+.text {
+  height: 36px;
+  position: relative;
+  width: 500px;
+  margin: 75px auto 0;
+  font-size: 30px;
+  line-height: 36px;
 }
+
+.cycle {
+  position: relative;
+  display: inline-block;
+  height: 28px;
+  width: 350px;
+  overflow: visible;
+  z-index: 1;
+}
+.cycle .item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28px;
+  display: inline-block;
+  z-index: 1;
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+  transform: translateY(-20px);
+  -moz-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+.cycle .item.current {
+  z-index: 2;
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.cycle .item.last {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transform: translateY(25px);
+  -ms-transform: translateY(25px);
+  -webkit-transform: translateY(25px);
+  transform: translateY(25px);
+}
+
 
 /* ---- particles.js container ---- */
 
-#particles-js {
+ #particles-js {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #b61924;
+  background-color: #cccccc;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-}
+} 
 
 /* ---- stats.js ---- */
 
-.count-particles{
+ .count-particles{
   background: #000022;
   position: absolute;
   top: 48px;
@@ -37,13 +92,13 @@ canvas {
   padding-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
-}
+} 
 
-.js-count-particles{
+ .js-count-particles{
   font-size: 1.1em;
-}
+} 
 
-#stats,
+ #stats,
 .count-particles{
   -webkit-user-select: none;
 }

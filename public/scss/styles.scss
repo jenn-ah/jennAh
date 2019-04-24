@@ -1,15 +1,56 @@
 /* ---- reset ---- */
+// @import "compass/css3";
 
-body {
-  margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
+// body {
+//   margin: 0;
+//   font: normal 75% Arial, Helvetica, sans-serif;
+// }
+
+// canvas {
+//   display: block;
+//   vertical-align: bottom;
+// }
+
+
+.text {
+  height: 36px;
+  position: relative; 
+  width: 500px;
+  margin: 75px auto 0;
+  font-size: 30px;
+  line-height: 36px;
 }
-
-canvas {
-  display: block;
-  vertical-align: bottom;
+.cycle {
+  position: relative;
+  //top: -1px;
+  display: inline-block;
+  height: 28px;
+  width: 350px;
+  overflow: visible;
+  z-index: 1;
+  .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 28px;
+    display: inline-block;
+    z-index: 1;
+    visibility: hidden;
+    @include opacity(0);
+    @include transform(translateY(-20px));
+    @include transition(all 350ms ease);
+    &.current {
+      z-index: 2;
+      visibility: visible;
+      @include opacity(1);
+      @include transform(translateY(0));
+    }
+    &.last {
+      @include opacity(0);
+      @include transform(translateY(25px));
+    }
+  }
 }
-
 /* ---- particles.js container ---- */
 
 #particles-js {
