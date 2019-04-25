@@ -4,8 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon server.js",
+    "db:seed": "POSTGRES_HOSTNAME=localhost npx knex seed:run",
+    "db:migrate": "POSTGRES_HOSTNAME=localhost npx knex migrate:latest",
+    "db:rollback": "POSTGRES_HOSTNAME=localhost npx knex migrate:rollback",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "knex": "^0.16.5",
+    "method-override": "^3.0.0",
+    "particles.js": "^2.0.0",
+    "pg": "^7.10.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "nodemon": "^1.18.11"
+  }
 }
